@@ -60,6 +60,18 @@ node_t* addNodeAtTheHead(node_t* head, int x){
 
 /*Delete a node*/
 node_t * deleteNode(node_t* head, int x){
+	
+	/*Check if the list is empty*/
+	if(head == NULL){
+		return NULL; 
+	}
+	
+	/*This will check if  removing the first element of the list */ 
+	if(head->x == x){
+		head = head->next;
+		return head; 
+	}
+	
 	node_t* n = newNode(x);   //Create a node using the newnode function
 	node_t* tmp = head; 	  //Here tmp is initialzed to the head of the list
 	node_t* prev ; 
