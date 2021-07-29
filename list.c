@@ -67,20 +67,27 @@ node_t * deleteNode(node_t* head, int x){
 	}
 	
 	/*This will check if  removing the first element of the list */ 
-	if(head->x == x){
+	else if (head->x == x){
 		head = head->next;
 		return head; 
 	}
-	
+	else{
 	node_t* n = newNode(x);   //Create a node using the newnode function
 	node_t* tmp = head; 	  //Here tmp is initialzed to the head of the list
 	node_t* prev ; 
 	//This loop will check till the node before the one to be deleted
-	while(tmp->x != x){
+	while(tmp->x != x && tmp->next != NULL){
 		prev = tmp; 	
 		tmp = tmp->next; 
-	}		
-	prev->next = tmp->next; 	
+	}	
+	//This meant we are at the end of the list and the element to delete there. 
+	if(tmp->next == NULL){
+		printf("Number is not the list"); 
+		return head; 
+	}
+	//The next of the previous node will now pont to where the node to remove is pointing to. 
+	prev->next = tmp->next;
+		free(tmp); 			//This is a very important command to run. If not, memory leak will occurs. 
 	return head; 
 }
 
