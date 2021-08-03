@@ -56,7 +56,7 @@ node* addNodeEnd(node* head, int x){
  
 /*function to search for a node given the list and the number being searched. 
 node* nodeSearch(node* head, int x){
-        /*Chec if the  list is emply(*/
+        /*Chec if the  list is emppty*/
  	if(head == NULL){
 		return NULL;
 	}
