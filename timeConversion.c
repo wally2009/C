@@ -7,12 +7,12 @@ char* timeConversion(char* s) {
     char* result = malloc(sizeof(s)+ 1);
     int i = 0,  hour = 0, hour1 = 0,  hour2 = 0 , l = 0, minute = 0; 
      
-    /*Allocating memory to the 3 holders : t1 for hour, t2 for minutes, and t3 for           second*/ 
+    /*Allocating memory to the 3 holders : t1 for hour, t2 for minutes, and t3 for second*/ 
     
     t1 = malloc(8);
     t2 = malloc(8);
     t3 = malloc(8);
-    t0 = malloc(8);
+    t0 = malloc(8);  
     while(tmp != NULL){
         if(i==0){
             strcpy(t1, tmp);
