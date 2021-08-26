@@ -99,23 +99,15 @@ for(int x = 0 ; x < strlen(t3); x++){
 
     } 
         
-// 
+
   
     return result; 
 }
 
 int main()
 {
-    FILE* f = fopen(getenv("OUTPUT_PATH"), "w");
-
-    char* s = readline();
-
-    char* result = timeConversion(s);
-
-    fprintf(fptr, "%s\n", result);
-
-    fclose(f);
-
+   char *s = 10:20:30AM
+    timeConversion(&s)  
     return 0;
 }
 
