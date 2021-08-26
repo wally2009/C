@@ -1,6 +1,7 @@
 /*
 Solution for hackerrank time conversion problem. 
 https://www.hackerrank.com/challenges/time-conversion/problem
+Note that I took the longer way : It uses the maximum number of String FUnction. After this code, I was able to manipualte string more efficiently
 */
 
 
@@ -50,11 +51,13 @@ for(int x = 0 ; x < strlen(t3); x++){
         }
        
     }
+   
+   /*Hours will be whatever hour is provided in the given time and add 12 to it. 
    hour1 = atoi(t1)+ 12 ;
-   minute = atoi(t2);
   // hour = atoi(t1); 
    
    /* Check the different scenario*/ 
+    /* First Scenario: from 0-to 11 AM */ 
     if((strcmp(am, "AM") == 0) && (atoi(t1) < 12)){
        int h =  atoi(t1);
       // h = h-12;
@@ -67,6 +70,7 @@ for(int x = 0 ; x < strlen(t3); x++){
        strcat(result, second);
        
     }
+      /*check time if it not PM and the given hour is 12*/
    else if((strcmp(am, "PM") != 0) && (atoi(t1) == 12)){
        hour1 = hour1 - 24; 
        printf("hour1 = %02d", hour1);
@@ -76,7 +80,8 @@ for(int x = 0 ; x < strlen(t3); x++){
        strcat(result, t2);
        strcat(result, ":");
        strcat(result, second);
-        
+       
+      /*Check if time is PM and hour is 12 */
     } else if((strcmp(am, "PM") == 0) && (atoi(t1)==12)){
        hour1 = hour1  - 12;
        printf("hour1 = %02d", hour1);
@@ -88,7 +93,7 @@ for(int x = 0 ; x < strlen(t3); x++){
        strcat(result, second);
       
     }
-    
+    /*This consider the remaining sceneario*/ 
     else{
    sprintf(t1, "%02d", hour1);
    strcpy(result, t1);
