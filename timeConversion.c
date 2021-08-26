@@ -1,5 +1,10 @@
+/*
+Solution for hackerrank time conversion problem. 
+https://www.hackerrank.com/challenges/time-conversion/problem
+*/
 
-#incude<stdio.h>
+
+#include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 
@@ -19,6 +24,8 @@ char* timeConversion(char* s) {
     t2 = malloc(8);
     t3 = malloc(8);
     t0 = malloc(8);  
+   
+   /*This part will give hours, the hour in t1, the minues in t2 and the second with PM/AM in t3*/
     while(tmp != NULL){
         if(i==0){
             strcpy(t1, tmp);
@@ -33,7 +40,8 @@ char* timeConversion(char* s) {
         i++; 
     }
     strncpy(second, t3, 2);
-   
+ 
+/* Retrive AM or PM for the second*/
 for(int x = 0 ; x < strlen(t3); x++){
       
         if(x == 2 || x == 3){
@@ -46,6 +54,7 @@ for(int x = 0 ; x < strlen(t3); x++){
    minute = atoi(t2);
   // hour = atoi(t1); 
    
+   /* Check the different scenario*/ 
     if((strcmp(am, "AM") == 0) && (atoi(t1) < 12)){
        int h =  atoi(t1);
       // h = h-12;
