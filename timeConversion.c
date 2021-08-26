@@ -106,8 +106,11 @@ for(int x = 0 ; x < strlen(t3); x++){
 
 int main()
 {
-   char *s = 10:20:30AM
-    timeConversion(&s)  
+   char s[11] = "10:20:30PM";
+   printf("\nTime to convert : %s\n", s);
+   printf("\nConverted time : %s\n", timeConversion(s));
+   // timeConversion(s);
     return 0;
 }
+
 
