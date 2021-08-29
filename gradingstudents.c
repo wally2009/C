@@ -38,25 +38,21 @@ int* gradingStudents(int grades_count, int* grades, int* result_count) {
    
     int r = 0; 
     int d = 0 ; 
+    
     for(int i = 0; i < grades_count; i++){
         r = grades[i]/5 ;   
-       /// printf("%r") 
         r++; 
-        d = r*5; 
-       // printf("\nd = %d\n", d);
-    
+        d = r*5;
         if( (d - grades[i] == 3) || (d - grades[i] > 3) || (grades[i] < 38)){    
             a[i]  = grades[i];
-        }else {
-           a[i]  = d; 
         }
-
+        else {
+            a[i]  = d; 
+        }
         (*result_count)++; 
     }
     
-    
-    
-        return a; //result_count  ; 
+        return a;  ; 
 
 }
 
