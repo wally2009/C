@@ -1,7 +1,8 @@
 /*
 Solution for hackerrank time conversion problem. 
 https://www.hackerrank.com/challenges/time-conversion/problem
-Note that I took the longer way : It uses the maximum number of String FUnction. After this code, I was able to manipualte string more efficiently
+Note that I took the longer way : It uses the maximum number of String Functions. I used such functions as strcpy, strnpy, strtok, strcmp to fix this problem.
+There is an easy way to solve write this code. 
 */
 
 
